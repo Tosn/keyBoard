@@ -99,7 +99,7 @@ function removeBoardHtml ($instance) {
     setTimeout(() => {
       if (hasNode($instance.$el)) {
         document.body.removeChild($instance.$el)
-        $instance.$destroy() // 释放内存
+        // $instance.$destroy() // 释放内存
       }
     }, 500)
   }
