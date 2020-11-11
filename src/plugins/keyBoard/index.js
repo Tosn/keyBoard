@@ -95,11 +95,11 @@ function createBoardHtml (el, $instance) {
  */
 function removeBoardHtml ($instance) {
   if (hasNode($instance.$el)) {
-    // $instance.$destroy() // 释放内存
     removeClass($instance.$el, 'keyboard-up')
     setTimeout(() => {
       if (hasNode($instance.$el)) {
         document.body.removeChild($instance.$el)
+        $instance.$destroy() // 释放内存
       }
     }, 500)
   }

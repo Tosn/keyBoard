@@ -15,21 +15,20 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 $keyboard-color-primary: #09d9f4 !default;
 .keyboard-cursorbox {
-  font-size: 12px;
-  position: absolute;
   color: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 12Px;
+  left: 13Px;
   &:after {
-    width: 2px;
-    height: 20px;
+    width: 2Px;
+    height: 18Px;
     content: '';
-    background-color: red;
+    background-color: #2e79de;
     position: absolute;
     right: -5px;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 0;
     animation: cursorLight 1.5s ease 0s infinite;
   }
 }
@@ -46,10 +45,10 @@ $keyboard-color-primary: #09d9f4 !default;
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: 1000000;
   transform: translateY(100%);
   transition: all .3s;
-  background-color: rgba(0, 0, 0, .8);
+  background-color: rgba(0, 0, 0, 1);
   &.keyboard-up {
     transform: translateY(0);
   }
