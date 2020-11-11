@@ -1,0 +1,124 @@
+@font-face {
+  font-family: 'iconfont';
+  src: url('./fonts/iconfont.eot');
+  src: url('./fonts/iconfont.eot?#iefix') format('embedded-opentype'),
+      url('./fonts/iconfont.woff2') format('woff2'),
+      url('./fonts/iconfont.woff') format('woff'),
+      url('./fonts/iconfont.ttf') format('truetype'),
+      url('./fonts/iconfont.svg#iconfont') format('svg');
+}
+
+.board-iconfont {
+  font-family: "iconfont" !important;
+  font-size: 3.2vw;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+$keyboard-color-primary: #09d9f4 !default;
+.keyboard-cursorbox {
+  font-size: 12px;
+  position: absolute;
+  color: rgba(0, 0, 0, 0);
+  &:after {
+    width: 2px;
+    height: 20px;
+    content: '';
+    background-color: red;
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: cursorLight 1.5s ease 0s infinite;
+  }
+}
+@keyframes cursorLight {
+  0% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+}
+.keyboard-section {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  transform: translateY(100%);
+  transition: all .3s;
+  background-color: rgba(0, 0, 0, .8);
+  &.keyboard-up {
+    transform: translateY(0);
+  }
+  .can-edit {
+    color: $keyboard-color-primary !important;
+  }
+  .keyboard-header {
+    border-bottom: 0.1333vw solid rgba(255, 255, 255, .3);
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    padding: 2.6667vw;
+    font-size: 3.2vw;
+    .board-left, .board-right {
+      min-width: 16vw;
+    }
+    .board-right {
+      text-align: right;
+    }
+    .board-left {
+      span {
+        &:not(:first-child) {
+          margin-left: 2.6667vw;
+        }
+      }
+    }
+  }
+  .keyboard-box {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    span {
+      margin: 0.6667vw;
+      border-radius: 0.8vw;
+      background-color: rgba(255, 255, 255, .2);
+      text-align: center;
+      color: #fff;
+      font-size: 4vw;
+      width: 8.6667vw;
+      height: 10.6667vw;
+      line-height: 10.6667vw;
+      &.board-iconfont {
+        color: $keyboard-color-primary;
+      }
+      &.current {
+        background-color: #fff;
+      }
+    }
+    &.view-char {
+      span {
+        &.board-space, &.board-del {
+          width: 13.6vw;
+        }
+      }
+    }
+    &.view-symbol {
+      span {
+        &.board-del {
+          width: 13.6vw;
+        }
+        &.board-space {
+          width: 63.7333vw;
+        }
+      }
+    }
+    &.view-num {
+      span {
+        width: 32vw;
+      }
+    }
+  }
+}
